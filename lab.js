@@ -151,7 +151,10 @@ function totalPopulation(obj) {
   Use object destructuring to save the property values to new variables. 
   Push these new variables to an array and return the array. 
 */
-
+function ingredients(obj) {
+  const{carb, fat, protein} = obj
+  return carb + fat + protein
+}
 //Code Here
 
 
@@ -173,7 +176,8 @@ var user = {
   name -> 'Bryan G. Smith' and email -> 'bryan.smith@devmounta.in'.
   Make that change without modifying the original object code above.
 */
-
+user.name = 'Bryan G. Smith',
+user.email = 'bryan.smith@devmounta.in'
 //Code Here
 
 
@@ -181,28 +185,52 @@ var user = {
 /*
   Using the user object above, delete the users age off of the object.
 */
-
+delete user.age
 //Code Here
 
 
 //////////////////////////// PROBLEM 12 ////////////////////////////
 /*
-  Create a class called 'Cat'. Make sure to call your constructor, and require these 3 parameters: name, age, color.
-  Outside of your class, create an instance of your cat, passing in whatever values you would like.
-  Print the name of your cat instance using dot notation.
+  Create a class called 'Cat'. Make sure to call your constructor, and require these 3 
+  parameters: name, age, color.
+  Outside of your class, create an instance of your cat, passing in whatever 
+  values you would like. Print the name of your cat instance using dot notation.
 */
-
+class Cat {
+  constructor(name, age, color){
+    this.name = name
+    this.age = age
+    this.color = color
+  }
+}
+const mosterCat = new Cat('Alber', 15, 'orange tabby')
+console.log(mosterCat.name)
 //Code here
 
 
 
 //////////////////////////// PROBLEM 13 ////////////////////////////
 /*
-  Create a class called 'Wizard'. Make sure to call your constructor, and require these 3 parameters: name, age, favoriteSpell.
-  Add a function to your Wizard class called castSpell. This function should print "{name} has cast {favoriteSpell}"
-  Outside of your class, create an instance of your Wizard, passing in whatever values you would like.
+  Create a class called 'Wizard'. Make sure to call your constructor, and require these
+   3 parameters: name, age, favoriteSpell. Add a function to your Wizard class called 
+   castSpell. This function should print "{name} has cast {favoriteSpell}"
+  Outside of your class, create an instance of your Wizard, passing in whatever
+   values you would like.
   Call the castSpell function on the instance of your wizard.
 */
+class Wizard {
+  constructor(name, age, favoriteSpell){
+    this.name = name
+    this.age = age
+    this.favoriteSpell = favoriteSpell
+  }
+
+  castSpell(){
+    console.log(`${this.name}, has cast ${this.favoriteSpell}`)
+  }
+}
+
+const hagrid = new Wizard('hagrid', 40, 'birds chirp')
 
 //Code here
 
@@ -228,7 +256,24 @@ var user = {
     Inside the function, reassign the value of the object's price
     to be newPrice.
 */
+class Phone {
+  constructor(brand, model, storage, color, price){
+    this.brand = brand
+    this.model = model
+    this.storage = storage
+    this.color = color
+    this.price = price
+    this.sold = fasle
+  }
+  sell() {
+    this.sold = true
+    console.log(`${brand} ${model}, has been sold`)
+  }
 
+  changePrice(newPrice){
+    this.price = newPrice
+  }
+}
 //Code Here
 
   
@@ -241,7 +286,9 @@ var user = {
     - color: string
     - price: number
 */
-
+let phoneOne = new Phone('Apple', 'iphone14', 500, 'grey', 1200)
+let phoneTwo = new Phone('Apple', 'iphone12', 256, 'white', 800)
+let phoneThree = new Phone('Apple', 'iphone', 128, 'black', 500)
 //Code Here
 
 /* 
@@ -250,7 +297,8 @@ var user = {
 
   Then console.log that object to see the price change
 */ 
-
+phoneThree = changePrice(250)
+console.log({phoneThree})
 //Code Here 
 
 
@@ -259,7 +307,8 @@ var user = {
 
   Print the value of that phone's sell property to make sure it's been changed to true
 */
-
+phoneOne.sell()
+console.log(phoneOne.sold)
 //Code Here 
 
 
